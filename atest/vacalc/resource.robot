@@ -9,7 +9,6 @@ ${TITLE}       Vacation Calculator
 
 *** Keywords ***
 Start Vacalc
-#    Set Jemmy Dispatch Model    QUEUE
     Set Environment Variable    VACALC_DB    ${DATABASE}
     Start Application    org.robotframework.vacalc.VacalcRunner
     Select Window    ${TITLE}
@@ -28,8 +27,6 @@ Add Employee
     [Arguments]    ${name}    ${date}
     Push Button    new_employee_button
     Type Into Text Field    name_input    ${name}
-    Focus To Component    start_input
-    Sleep    0.01
     Type Into Text Field    start_input    ${date}
     Push Button    save_button
 
