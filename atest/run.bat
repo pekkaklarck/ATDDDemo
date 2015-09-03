@@ -1,9 +1,9 @@
 @echo off
 
-set ROOTDIR=%~dp0..
-set BINPATH=%ROOTDIR%\bin
-set SRCPATH=%ROOTDIR%\src
-set TESTDATA=%ROOTDIR%\atest\vacalc
-set TESTLIBS=%ROOTDIR%\atest\libraries
-set CLASSPATH=%BINPATH%\robotframework-2.9.1.jar;%TESTLIBS%\swinglibrary-1.9.4.jar;%BINPATH%
-java org.robotframework.RobotFramework -P "%SRCPATH%" -P "%TESTLIBS%" %* --outputdir "%ROOTDIR%\results" --critical regression "%TESTDATA%"
+set ROOT=%~dp0..
+set BIN=%ROOT%\bin
+set SRC=%ROOT%\src
+set TESTS=%ROOT%\atest\vacalc
+set LIBS=%ROOT%\atest\libraries
+set CLASSPATH=%BIN%\robotframework-2.9.1.jar;%BIN%;%LIBS%\swinglibrary-1.9.4.jar
+java org.robotframework.RobotFramework -P "%SRC%" -P "%LIBS%" --outputdir "%ROOT%\results" --critical regression %* "%TESTS%"
