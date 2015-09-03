@@ -1,3 +1,4 @@
+#!/bin/sh
 ROOT=`dirname $0`/..
 BIN=$ROOT/bin
 SRC=$ROOT/src
